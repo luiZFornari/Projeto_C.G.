@@ -6,15 +6,23 @@ TagManager:
   tags:
   - CinemachineTarget
   - Coin
+  - Porta
+  - Water
+  - Void
+  - Atack
+  - Terreno
+  - Enemy
+  - EnemyMago
+  - EnemySlime
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Terreno
+  - Enemy
   - 
   - 
   - 
