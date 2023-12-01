@@ -4,36 +4,50 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static bool respawn = false;
-    public float threshold;
-
-    // Update is called once per frame
-
+    public Vector3 checkpoint = new Vector3(-37.5600014f, 1.48000002f, 5.8499999f);
 
     void FixedUpdate()
     {
         if (respawn)
         {
-            transform.position = new Vector3(0f, 3.0f, 0f);
+            transform.position = checkpoint;
             respawn = false;
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Water")
+        if (other.transform.CompareTag("Water"))
         {
-            respawn = true;
+            transform.position = checkpoint;
         }
 
-        if (other.transform.tag == "Void")
+        if (other.transform.CompareTag("Void"))
         {
-            respawn = true;
+
+            transform.position = checkpoint;
         }
+
+        if (other.transform.CompareTag("CheckPoint"))
+        {
+            checkpoint = new Vector3(113, 9, -310);
+        }
+
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.transform.CompareTag("Water"))
+        {
+            transform.position = checkpoint;
+        }
+
+        if (other.transform.CompareTag("Void"))
+        {
+            transform.position = checkpoint;
+        }
+    }
 
 
 

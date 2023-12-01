@@ -10,14 +10,11 @@ public class PegaMoeda : MonoBehaviour
     public TextMeshProUGUI MoedaTXT;
 
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Coin")
         {
             Coin++;
-            Debug.Log(Coin);
             MoedaTXT.text = "Coin: " + Coin.ToString();
             Destroy(other.gameObject);
         }

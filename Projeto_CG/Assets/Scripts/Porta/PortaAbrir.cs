@@ -77,6 +77,14 @@ public class PortaAbrir : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _colidindo = true;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         _colidindo = false;
